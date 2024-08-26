@@ -1,0 +1,33 @@
+Realizado por Gonzalo Montezuma
+Algunos de las limitaciones que presenta el proyecto son:
+
+NO MOVER EL ARCHIVO .exe DE LA CARPETA EN DONDE APARECE, DE NECESITAR EL .exe
+EN OTRO LUGAR, CREAR UN ACCESO DIRECTO, DE LO CONTRARIO NO FUNCIONARÁ LA
+APLICACIÓN.
+
+1. Incompatibilidad de acceso desde distintos computadores (actualizable)
+El programa funciona genéricamente en cualquier computadora que tenga todos
+los requerimientos y componentes (como librerías) para poder correrlo. Más,
+la base de datos unicamente funcionará en el computador que se configure, si bien
+muy posiblemente sea posible poder tener una base de datos general que pueda
+funcionar en distintas computadoras a la vez, en este laboratorio no se confugurará
+de esa manera.
+
+------------------------------------------------------------------------------------
+
+2. Voto secreto
+Por la funcionalidad de las votaciones, para hacer posible que el voto sea 
+completamente secreto, el programa irá añadiendo votos al partido al mismo tiempo 
+que la persona ingresa el voto, esto lo que causa es que no haya registros de quién
+votó por qué partido. La dificultad que presenta este sistema, es que el numero de
+votos unicamente irá en aumento y no hay manera de verificar que los datos estén
+correctos, la unica manera sería corroborar que haya la misma cantidad de votantes
+que de votaciones; aún así dejando hueco a posibles modificaciones y votos
+deshonestos.
+
+------------------------------------------------------------------------------------
+
+3. 2 Partidos (actualizable)
+El programa está hecho para que sea posible votar por 2 partidos, y se puede
+actualizar fácilmente para que hayan más opciones, pero aún así requeriría de
+edición en el código fuente.

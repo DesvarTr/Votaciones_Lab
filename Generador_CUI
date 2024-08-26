@@ -1,0 +1,36 @@
+import random
+
+def generar_numero():
+    while True:
+        numero = generar_segmento(4) + "-" + generar_segmento(5) + "-" + generar_segmento(4)
+        if validar_numero(numero):
+            return numero
+
+def generar_segmento(length):
+    segmento = [random.randint(1, 9) for _ in range(length)]
+    for i in range(2, length):
+        # Evitar tres números iguales seguidos
+        if segmento[i] == segmento[i-1] == segmento[i-2]:
+            segmento[i] = random.choice([x for x in range(1, 10) if x != segmento[i-1]])
+        
+        # Evitar tres números consecutivos seguidos (ascendente o descendente)
+        if (segmento[i] == segmento[i-1] + 1 == segmento[i-2] + 2) or \
+           (segmento[i] == segmento[i-1] - 1 == segmento[i-2] - 2):
+            segmento[i] = random.choice([x for x in range(1, 10) if x not in {segmento[i-1] + 1, segmento[i-1] - 1}])
+
+    return "".join(map(str, segmento))
+
+def validar_numero(numero):
+    segmentos = numero.split('-')
+    for segmento in segmentos:
+        for i in range(2, len(segmento)):
+            if segmento[i] == segmento[i-1] == segmento[i-2]:
+                return False
+            if (int(segmento[i]) == int(segmento[i-1]) + 1 == int(segmento[i-2]) + 2) or \
+               (int(segmento[i]) == int(segmento[i-1]) - 1 == int(segmento[i-2]) - 2):
+                return False
+    return True
+
+# Generar y mostrar un número aleatorio
+numero_aleatorio = generar_numero()
+print(numero_aleatorio)
